@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  color: #0b132b;
+  line-height: 1.6;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 80px;
+  border-bottom: 1px solid #eee;
+}
+
+nav a {
+  margin-right: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #333;
+}
+
+.register-btn {
+  background: #2ecc71;
+  border: none;
+  padding: 10px 26px;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+/* HERO */
+.hero {
+  padding: 100px 80px;
+  background: #f5f7f6;
+}
+
+.hero h1 {
+  font-size: 46px;
+  font-weight: 800;
+}
+
+.hero p {
+  margin-top: 20px;
+  max-width: 600px;
+}
+
+/* EVENTS */
+.events {
+  padding: 80px;
+}
+
+.events ul {
+  margin-top: 20px;
+  padding-left: 20px;
+}
+
+.events li {
+  margin-bottom: 10px;
+}
+
+/* CTA */
+.cta {
+  background: #003f7d;
+  color: white;
+  text-align: center;
+  padding: 90px;
+}
+
+.cta button {
+  margin-top: 25px;
+  padding: 14px 40px;
+  background: #2ecc71;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background: white;
+  width: 90%;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.close {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* FORM */
+form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+}
+
+form button {
+  margin-top: 25px;
+  width: 100%;
+  padding: 14px;
+  background: #2ecc71;
+  border: none;
+  border-radius: 30px;
+  color: white;
+}
+
+/* SCROLL ANIMATION */
+.fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+``
