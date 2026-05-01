@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>FitGB Festival</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -16,104 +16,148 @@
 
 <!-- NAVBAR -->
 <header class="navbar fade">
-  <div>
+  <div class="logo">
     <h2>FitGB Festival</h2>
-    <p>Promoting active lifestyles & wellbeing</p>
+    <p>Promoting active lifestyles, mental wellbeing, and community connection</p>
   </div>
 
   <nav>
     <a href="#home">Home</a>
-    <a href="#events">Events</a>
+    <a href="#activities">Events</a>
     <button class="register-btn" onclick="openForm()">Register</button>
   </nav>
 </header>
 
-<!-- HERO -->
+<!-- HERO SECTION -->
 <section id="home" class="hero fade">
-  <h1>Empowering Communities Through Sport and Wellbeing</h1>
+  <div class="hero-text">
+    <h1>Empowering Communities Through Sport and Wellbeing</h1>
+    <p>
+      FitGB is a UK non‑profit dedicated to promoting active lifestyles
+      and inclusive community wellbeing through impactful events.
+    </p>
+  </div>
+
+  <img src="assets/hero.jpg" alt="Community sport event" />
+</section>
+
+<!-- DARK INFO SECTION -->
+<section class="dark fade">
+  <h2>Fostering Health and Connection</h2>
   <p>
-    Join us for an inclusive community sports and wellness festival
-    focused on health, activity, and connection.
+    The FitGB Community Sports and Wellness Festival is more than just a day of sport.
+    It is a holistic platform for wellbeing, mental health awareness, and meaningful
+    social connection.
   </p>
 </section>
 
-<!-- EVENTS -->
-<section id="events" class="events fade">
+<!-- PROGRAMME & ACTIVITIES -->
+<section id="activities" class="programmes fade">
   <h2>Programme & Activities</h2>
+  <p class="subtext">
+    A curated day of sport, wellness, and community engagement designed for everyone.
+  </p>
 
-  <ul>
-    <li>Football (Soccer)</li>
-    <li>Group Fitness Classes</li>
-    <li>Yoga and Wellness Workshops</li>
-    <li>Recreational Games</li>
-    <li>Health & Lifestyle Talks</li>
-  </ul>
+  <div class="cards">
+    <div class="card">
+      <img src="assets/football.jpg">
+      <h3>Sports Competitions</h3>
+      <p>From football to athletics, promoting physical activity and teamwork.</p>
+    </div>
+
+    <div class="card">
+      <img src="assets/yoga.jpg">
+      <h3>Wellness Workshops</h3>
+      <p>Expert‑led yoga, fitness, and mental wellbeing sessions.</p>
+    </div>
+
+    <div class="card">
+      <img src="assets/music.jpg">
+      <h3>Student‑led Activities</h3>
+      <p>Live entertainment and creative workshops from students.</p>
+    </div>
+
+    <div class="card">
+      <img src="assets/food.jpg">
+      <h3>Local Food Stalls</h3>
+      <p>Healthy food options from local vendors.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CAMPUS -->
+<section class="campus fade">
+  <img src="assets/campus.jpg">
+
+  <div>
+    <h2>University of Greenwich Campus</h2>
+    <p>
+      We selected the University of Greenwich for its safe, accessible,
+      and welcoming environment — perfect for inclusive community events.
+    </p>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values fade">
+  <div>
+    <h3>Eco‑Friendly Practices</h3>
+    <p>Zero‑waste initiatives and reusable materials.</p>
+  </div>
+
+  <div class="line"></div>
+
+  <div>
+    <h3>Universal Accessibility</h3>
+    <p>Inclusive facilities and sensory‑friendly spaces.</p>
+  </div>
+
+  <div class="line"></div>
+
+  <div>
+    <h3>Safe Community Space</h3>
+    <p>A secure environment promoting wellbeing and inclusion.</p>
+  </div>
 </section>
 
 <!-- CTA -->
 <section class="cta fade">
   <h2>Join the Movement</h2>
-  <p>Click below to register your interest.</p>
-  <button onclick="openForm()">Register Now</button>
+  <p>
+    Secure your place for a day of inclusive health education and
+    meaningful community connection.
+  </p>
+
+  <button onclick="openForm()">Register Your Interest</button>
 </section>
 
-<!-- FORM MODAL -->
-<div class="modal" id="registerModal">
+<!-- GOOGLE FORM MODAL -->
+<div class="modal" id="formModal">
   <div class="modal-content">
     <span class="close" onclick="closeForm()">&times;</span>
-
-    <h2>Event Registration</h2>
-
-    <form onsubmit="submitForm(event)">
-      <label>Full Name *</label>
-      <input type="text" required>
-
-      <label>Email Address *</label>
-      <input type="email" required>
-
-      <label>Age Group *</label>
-      <select required>
-        <option>Under 18</option>
-        <option>18–25</option>
-        <option>26–40</option>
-        <option>41–60</option>
-        <option>60+</option>
-      </select>
-
-      <label>Which activities are you interested in?</label>
-      <textarea></textarea>
-
-      <label>
-        <input type="checkbox" required>
-        I agree to participate in the FitGB Festival
-      </label>
-
-      <button type="submit">Submit</button>
-    </form>
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSdCS1-U6umcEep9SV_1RTFLlFkv3lRb1-tyxUP0hyx4xjaJSg/viewform?embedded=true"
+      width="100%"
+      height="700"
+      frameborder="0"
+    ></iframe>
   </div>
 </div>
 
-<!-- JAVASCRIPT -->
+<!-- SCRIPT -->
 <script>
 function openForm() {
-  document.getElementById("registerModal").style.display = "block";
+  document.getElementById("formModal").style.display = "block";
 }
-
 function closeForm() {
-  document.getElementById("registerModal").style.display = "none";
+  document.getElementById("formModal").style.display = "none";
 }
 
-function submitForm(e) {
-  e.preventDefault();
-  alert("Thank you! Your registration has been submitted.");
-  closeForm();
-}
-
-const fades = document.querySelectorAll(".fade");
+const fadeItems = document.querySelectorAll(".fade");
 window.addEventListener("scroll", () => {
-  fades.forEach(section => {
-    if (section.getBoundingClientRect().top < window.innerHeight - 100) {
-      section.classList.add("show");
+  fadeItems.forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+      el.classList.add("show");
     }
   });
 });
