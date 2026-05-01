@@ -2,94 +2,122 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Website</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-    }
+  <title>FitGB Festival</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    header {
-      background: #333;
-      color: white;
-      padding: 15px;
-      text-align: center;
-    }
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 
-    nav {
-      background: #555;
-      padding: 10px;
-      text-align: center;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      color: #ffd700;
-    }
-
-    .container {
-      padding: 20px;
-      text-align: center;
-    }
-
-    .card {
-      background: white;
-      padding: 20px;
-      margin: 20px auto;
-      width: 80%;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
-  </style>
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<header>
-  <h1>Welcome to My Website 👋</h1>
-  <p>Built using GitHub Pages</p>
+<!-- NAVBAR -->
+<header class="navbar fade">
+  <div>
+    <h2>FitGB Festival</h2>
+    <p>Promoting active lifestyles & wellbeing</p>
+  </div>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#events">Events</a>
+    <button class="register-btn" onclick="openForm()">Register</button>
+  </nav>
 </header>
 
-<nav>
-  <a href="#">Home</a>
-  <a href="#">About</a>
-  <a href="#">Contact</a>
-</nav>
+<!-- HERO -->
+<section id="home" class="hero fade">
+  <h1>Empowering Communities Through Sport and Wellbeing</h1>
+  <p>
+    Join us for an inclusive community sports and wellness festival
+    focused on health, activity, and connection.
+  </p>
+</section>
 
-<div class="container">
+<!-- EVENTS -->
+<section id="events" class="events fade">
+  <h2>Programme & Activities</h2>
 
-  <div class="card">
-    <h2>About Me</h2>
-    <p>Hi! I'm learning how to build websites and this is my first project 🚀</p>
+  <ul>
+    <li>Football (Soccer)</li>
+    <li>Group Fitness Classes</li>
+    <li>Yoga and Wellness Workshops</li>
+    <li>Recreational Games</li>
+    <li>Health & Lifestyle Talks</li>
+  </ul>
+</section>
+
+<!-- CTA -->
+<section class="cta fade">
+  <h2>Join the Movement</h2>
+  <p>Click below to register your interest.</p>
+  <button onclick="openForm()">Register Now</button>
+</section>
+
+<!-- FORM MODAL -->
+<div class="modal" id="registerModal">
+  <div class="modal-content">
+    <span class="close" onclick="closeForm()">&times;</span>
+
+    <h2>Event Registration</h2>
+
+    <form onsubmit="submitForm(event)">
+      <label>Full Name *</label>
+      <input type="text" required>
+
+      <label>Email Address *</label>
+      <input type="email" required>
+
+      <label>Age Group *</label>
+      <select required>
+        <option>Under 18</option>
+        <option>18–25</option>
+        <option>26–40</option>
+        <option>41–60</option>
+        <option>60+</option>
+      </select>
+
+      <label>Which activities are you interested in?</label>
+      <textarea></textarea>
+
+      <label>
+        <input type="checkbox" required>
+        I agree to participate in the FitGB Festival
+      </label>
+
+      <button type="submit">Submit</button>
+    </form>
   </div>
-
-  <div class="card">
-    <h2>My Goals</h2>
-    <p>I want to improve my coding skills and create amazing websites!</p>
-  </div>
-
 </div>
 
-<footer>
-  <p>© 2026 My Website</p>
-</footer>
+<!-- JAVASCRIPT -->
+<script>
+function openForm() {
+  document.getElementById("registerModal").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("registerModal").style.display = "none";
+}
+
+function submitForm(e) {
+  e.preventDefault();
+  alert("Thank you! Your registration has been submitted.");
+  closeForm();
+}
+
+const fades = document.querySelectorAll(".fade");
+window.addEventListener("scroll", () => {
+  fades.forEach(section => {
+    if (section.getBoundingClientRect().top < window.innerHeight - 100) {
+      section.classList.add("show");
+    }
+  });
+});
+</script>
 
 </body>
 </html>
